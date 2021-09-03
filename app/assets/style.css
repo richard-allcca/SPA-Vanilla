@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: hsl(206, 99%, 31%);
+}
+a:hover {
+  color: hsl(199, 100%, 50%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* ======== header ======== */
+.header {
+  padding-top: 0.1px;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: hsl(54, 83%, 51%);
+}
+.header > * {
+  margin: 1rem auto;
+}
+.h1 {
+  min-width: 100vw;
+}
+.search-form input {
+  /* text-align: center; */
+  /* margin: auto; */
+  /* display: block; */
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* ======== Error ======== */
+.error {
+  padding: 1rem;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(354, 70%, 54%);
+}
+.loader {
+  margin: 1rem auto;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+
+/* ======== Post ======== */
+.post-card {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: hsl(204, 15%, 94%);
+}
+/* ubica a los lados la fecha y enlace a la publicación */
+.post-card p {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ======== Responsive con Grid ======== */
+.grid-fluid {
+  margin: 1rem auto;
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
