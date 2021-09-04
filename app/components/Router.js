@@ -6,11 +6,11 @@ import { PostCard } from "./posts/PostCard.js";
 export function Router() {
   const d = document;
   const w = window;
-  const $posts = d.getElementById("posts");
+  const $amin = d.getElementById("main");
 
   let { hash } = location;
 
-  // $posts.innerHTML = null; //! esto aun me falta ver si es necesario
+  // $amin.innerHTML = null; //! esto aun me falta ver si es necesario
 
   if (!hash || hash === "#/") {
     ajax({
@@ -19,15 +19,15 @@ export function Router() {
         let html = "";
         posts.forEach((el) => (html += PostCard(el)));
         // console.log(html);
-        $posts.insertAdjacentHTML("beforeend", html);
+        $amin.insertAdjacentHTML("beforeend", html);
         // d.querySelector("loader").display = "none";
       },
     });
   } else if (hash.includes("#/search")) {
-    $posts.innerHTML = "busqueda";
+    $amin.innerHTML = "busqueda";
   } else if (hash === "#/contacto") {
-    $posts.innerHTML = "contacto";
+    $amin.innerHTML = "contacto";
   } else {
-    $posts.innerHTML = "Post seleccionado";
+    $amin.innerHTML = "Post seleccionado";
   }
 }
