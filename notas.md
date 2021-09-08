@@ -20,6 +20,8 @@
    5. components - header - title, postCard, loader
    6. components - Post - PostCard 
    7. components - Router
+      1. Home
+      2. Select Post - Importante el video 153 
 
 # scroll infinito
 1. agregamos la const PER_PAGE 

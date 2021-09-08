@@ -1,19 +1,27 @@
+//? el contenido de este componente va dentro del Post.js
 export function PostCard(props) {
-  let { date, slug, title, _embedded } = props;
+  let { date, id, slug, title, _embedded } = props;
   let dateFormat = new Date(date).toLocaleString();
   let urlPoster = _embedded["wp:featuredmedia"]
     ? _embedded["wp:featuredmedia"][0].source_url
     : "app/assets/Captura_pantalla.png";
 
+  if (urlPoster === undefined) urlPoster = "app/assets/Captura_pantalla.png";
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.matches(".post-card a")) return false;
+
+    localStorage.setItem("wp-id", e.target.dataset.id);
+  });
+
   return `
     <article class="post-card">
-      <img src="${urlPoster}" alt=${title.rendered}>
+      <img src=${urlPoster} alt=${title.rendered}>
       <h2>${title.rendered}</h2>
       <p>
         <time datetime="${date}" >${dateFormat}</time>
-        <a href="#/${slug}">Ver Publicación</a>
+        <a href="#/${slug}" data-id=${id}>Ver Publicación</a>
       </p>
     </article>
   `;
 }
-//? el contenido de este componente va dentro del Post.js

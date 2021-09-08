@@ -33,17 +33,21 @@ img {
   top: 0;
   text-align: center;
   background-color: hsl(54, 83%, 51%);
+  box-shadow: 0 0 5px rgba(0, 0, 0);
 }
 .header > * {
   margin: 1rem auto;
 }
-.h1 {
+
+h1 {
+  margin-top: 1rem;
   min-width: 100vw;
 }
 .search-form input {
   /* text-align: center; */
-  /* margin: auto; */
   /* display: block; */
+
+  margin-bottom: 0.5rem;
   padding: 0.25rem;
   border-radius: 0.25rem;
   font-size: 0.9rem;
@@ -55,8 +59,15 @@ img {
   font-size: 150%;
   font-weight: bold;
   text-align: center;
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 80%);
   background-color: hsl(354, 70%, 54%);
+}
+.error mark {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(206, 99%, 31%);
 }
 .loader {
   margin: 1rem auto;
@@ -85,4 +96,63 @@ img {
   max-width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+/* ======== .post-card Select ======== */
+.post-page {
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 80vw;
+  background-color: hsl(204, 15%, 94%);
+  box-shadow: 5px 5px 10px hsla(199, 30%, 30%);
+}
+.post-page > aside {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+.post-page > hr {
+  border: thin solid hsl(198, 16%, 84%);
+  margin: 2rem auto;
+  width: 80%;
+}
+.post-page time {
+  margin: auto;
+  display: block;
+}
+.post-page > article {
+  padding: 0 2rem;
+}
+.post-page img,
+.post-page iframe,
+.post-page video,
+.post-page audio,
+.post-page figure {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  padding: 0 2rem;
+}
+.post-page pre > * {
+  color: hsl(198, 26%, 54%);
+  white-space: pre-wrap;
+}
+/* ======== .post-card find ======== */
+.post-find {
+  margin: 1rem auto;
+  max-width: 80%;
+  text-align: center;
+}
+.post-find > article {
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: hsl(204, 15%, 94%);
+  box-shadow: 5px 5px 10px hsla(199, 30%, 30%);
+}
+article > h2 {
+  width: 100%;
+}
+article > p {
+  flex-grow: 1;
 }

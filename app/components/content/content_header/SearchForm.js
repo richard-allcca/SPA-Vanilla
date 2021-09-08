@@ -21,9 +21,11 @@ export function SearchForm() {
     if (!e.target.matches("input[type='search']")) return false;
     if (!$input.value) localStorage.removeItem("wpSearch");
   });
+
   //  evento para hacer la busqueda
   d.addEventListener("submit", (e) => {
     if (!e.target.matches(".search-form")) return false;
+
     e.preventDefault();
 
     localStorage.setItem("wpSearch", e.target.search.value);
