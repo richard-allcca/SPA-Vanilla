@@ -87,7 +87,7 @@ export function ContactForm() {
   //! cuando usas html crudo "escapa los \"
   $form.innerHTML = `
     <legend>Envianos tus Comentarios</legend>
-      <input type="text" name="name" placeholder="Ingresa tus Datos" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+      <input type="text" name="name" placeholder="Ingresa tus Datos" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
         title="Nombre solo acepta letras y espacios en blanco" required autofocus>
 
       <input type="email" name="email" placeholder="Ingresa tu Correo" title="Email Incorrecto"
@@ -95,7 +95,7 @@ export function ContactForm() {
         
         <input type="text" name="subject" placeholder="Asunto a Tratar" title="El Asunto es Requerido" required>
         
-        <textarea name="comments" cols="50" rows="5" placeholder="Ingresa tus Comentarios" data-pattern="/[a-zÑñÁáÉéÍíÓóÚúÜüA-Z,0-9\n]/g"
+        <textarea  name="comments" cols="50" rows="5" placeholder="Ingresa tus Comentarios" data-pattern="^.{1,255}$"
         title="Tu Comentario no puede exceder los 250 caracteres" required></textarea>
         
         <input type="submit" value="Enviar">
@@ -133,7 +133,7 @@ export function ContactForm() {
         // si tiene patron
         if (pattern && $input.value !== "") {
           let regex = new RegExp(pattern);
-          console.log($input.name);
+          // console.log($input.name);
           return !regex.exec($input.value)
             ? d.getElementById($input.name).classList.add("is-active")
             : d.getElementById($input.name).classList.remove("is-active");
