@@ -4,7 +4,8 @@ export function ContactForm() {
     $styles = d.getElementById("dynamic-styles");
 
   $form.classList.add("contact-form");
-
+  $form.action = "https://formsubmit.co/your@email.com";
+  $form.method = "POST";
   const $loader = d.querySelector(".loader"); //? loader del submit
 
   $loader.classList.add("none");
@@ -16,7 +17,6 @@ export function ContactForm() {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  /* border: 1px solid; */
 }
 .contact-form > * {
   display: block;
@@ -65,7 +65,14 @@ export function ContactForm() {
 }
 .contact-form-error.is-active {
   display: block;
-  /* animacion show-message dura, cuantas veces se ejecuta, forma de ejecucion(normal),no tiene retardo(0), efecto de animacon ease-out(afuera), va conservar los estilos con los que termine */
+  /* 
+  name de animation-> show-message dura, 
+  cuantas veces se ejecuta, 
+  forma de ejecucion(normal),
+  no tiene retardo(0s), 
+  efecto de animacon ease-out(afuera), 
+  va conservar los estilos con los que termine 
+  */
   animation: show-message 1s 1 normal 0s ease-out both;
 }
 .none {
@@ -128,8 +135,6 @@ export function ContactForm() {
           pattern = $input.pattern || $input.dataset.pattern;
         //? los (data-atribute) estan en un "dataset"
 
-        // console.log($input.title, pattern);
-
         // si tiene patron
         if (pattern && $input.value !== "") {
           let regex = new RegExp(pattern);
@@ -168,7 +173,8 @@ export function ContactForm() {
 
           $loader.classList.add("none");
           $response.classList.remove("none");
-          $response.innerHTML = `<p>${json.message}</p>`;
+          $response.innerHTML = `<p>Hola🖐️..Tu Mensaje Fue Enviado con Exíto😀</p>`;
+          // $response.innerHTML = `<p>${json.message}</p>`; // alternatively
           $form.reset();
         })
         .catch((err) => {
@@ -180,9 +186,7 @@ export function ContactForm() {
           setTimeout(() => {
             $response.classList.add("none"); //oculta la etiqueta del msj
             $response.innerHTML = ""; // resetear el msj de respuesta
-
-            //   $form.reset()
-          }, 3000);
+          }, 5000);
         });
     });
   }
