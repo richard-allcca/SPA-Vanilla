@@ -8,8 +8,8 @@ export function Menu() {
   <span></span>
   <a href="#/contacto">Contacto</a>
   <span></span>
-  <a href="https://aprendejavascript.org" 
-  rel="no-opener noreferrer" target="_blank" >Aprende JS</a>
+  <a href="https://github.com/richard-allcca" 
+  rel="no-opener noreferrer" target="_blank" >Repositorio en Git</a>
   `;
   return $nav;
 }
