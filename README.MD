@@ -21,3 +21,7 @@ Para los estilos del formulario utilizo el concepto de "**MaterialUI**" estructu
 La funcion principal de este proyecto es visualizar de cualquier blog echo en "wordpress" y utilizo el contenido de estos mediante la "**API**" de "wordpress.org" 
 
 Ademas de hacer busquedas de publicaciones de estos blog mediante un buscador interactivo y mostrar los resultados en su propia seccion 
+
+## Ver Proyecto
+
+-[Single Page Aplicatión](https://richard-allcca.github.io/SPA-Vanilla/)
